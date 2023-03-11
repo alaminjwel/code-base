@@ -28,3 +28,17 @@ class Solution:
                 memo[key] = max(helper(idx1+1,idx2),helper(idx1,idx2+1))
             return memo[key]
         return helper(0,0)
+
+
+# https://medium.com/@kevinmavani/longest-common-subsequence-using-dynamic-programming-641eed90dab1
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        n1,n2=len(text1),len(text2)
+        results = [[0 for _ in range(n2+1)] for _ in range(n1+1)]
+        for idx1 in range(n1):
+            for idx2 in range(n2):
+                if text1[idx1] == text2[idx2]:
+                    results[idx1+1][idx2+1] = 1 + results[idx1][idx2]
+                else:
+                    results[idx1+1][idx2+1] = max(results[idx1][idx2+1],results[idx1+1][idx2])
+        return results[-1][-1]
