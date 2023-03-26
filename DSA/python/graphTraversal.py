@@ -106,7 +106,7 @@ class Graph:
 
 
 # non-directed, not weighted
-graph = Graph(5,[(0,1),(0,4),(1,2),(1,3),(1,4),(2,3),(3,4)])
+# graph = Graph(5,[(0,1),(0,4),(1,2),(1,3),(1,4),(2,3),(3,4)])
 # graph = Graph(9,[(0, 1), (0, 3), (1, 2), (2, 3), (4, 5), (4, 6), (5, 6), (7, 8)])
 
 # weighted
@@ -114,6 +114,9 @@ graph = Graph(5,[(0,1),(0,4),(1,2),(1,3),(1,4),(2,3),(3,4)])
 
 # directed
 # graph = Graph(5,[(0, 1), (1, 2), (2, 3), (2, 4), (4, 2), (3, 0)],directed=True)
+
+# weighted directed
+graph = Graph(6,[(0, 1, 4), (0, 2, 2), (1, 2, 5), (1, 3, 10), (2, 4, 3), (4, 3, 4), (3, 5, 11)],weignted=True,directed=True)
 
 print("Initial graph:")
 graph.display()

@@ -1,0 +1,82 @@
+The problem is to find the length of the longest common subsequence between two strings text1 and text2. A subsequence is a sequence of characters from a string, where the order of characters is maintained, but not necessarily contiguous. A common subsequence of two strings is a subsequence that is present in both the strings.
+
+1. `text1` : string of length 1 - 1000. i.e "abcde"
+2. `text2` : another string of length 1 - 1000. i.e "abcde"
+
+
+1. length of longest common subsequence. i.e 3 
+
+
+
+
+T1 = {
+    'input': {
+        'text1': 'serendipitous',
+        'text2': 'precipitation'
+    },
+    'output': 7
+}
+
+T2 = {
+    'input': {
+        'text1': 'longest',
+        'text2': 'stone'
+    },
+    'output': 3
+}
+
+T3 = {
+    'input': {
+        'text1': 'asdfwevad',
+        'text2': 'opkpoiklklj'
+    },
+    'output': 0
+}
+
+T4 = {
+    'input': {
+        'text1': 'dense',
+        'text2': 'condensed'
+    },
+    'output': 5
+}
+
+T5 = {
+    'input': {
+        'text1': 'abcdef',
+        'text2': 'badcfe'
+    },
+    'output': 3
+}
+
+tests = [T1, T2, T3, T4, T5]
+
+tests.append({
+    'input': {
+        'text1':'abcdefghijklmnopqrstuvwxyz',
+        'text2':'zyxwvutsrqponmlkjihgfedcba'
+    },
+    'output': 1
+})
+
+
+
+1. Define a recursive longestCommonSubsequence() function that takes two strings as input and initial indexes of two inputs both set to 0 by default
+2. If either of the index is out of range return 0. This is the base case of the recursion.
+3. If the current characters in both strings match text1[idx1] == text2[idx2], increase length of the common subsequence  by 1 recursively, and we move to the next character in both strings.
+4. If the current characters in both strings do not match, return the maximum of longestCommonSubsequence(textt,text2,idx1+1,idx2) and longestCommonSubsequence(textt,text2,idx1,idx2+1). This means that we have two choices: either we skip the current character in text1 or we skip the current character in text2, and we take the maximum length of the two resulting subproblems.
+
+Let's save and upload our work before continuing.
+
+
+
+
+
+def longestCommonSubsequence(text1,text2,idx1=0,idx2=0):
+    if len(text1)==idx1 or len(text2)==idx2:
+        return 0
+    if text1[idx1]==text2[idx2]:
+        return 1+longestCommonSubsequence(text1,text2,idx1+1,idx2+1)
+    else:
+        return max(longestCommonSubsequence(text1,text2,idx1+1,idx2),longestCommonSubsequence(text1,text2,idx1,idx2+1))
+
