@@ -13,7 +13,7 @@ class Solution:
             mid = (lo+hi)//2
             mid_number = nums[mid]
 
-            if mid > 0 and mid_number < nums[mid-1]:
+            if mid_number < nums[mid-1]:
                 return nums[mid]
 
             elif mid_number < nums[hi]:
