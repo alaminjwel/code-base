@@ -1,8 +1,3 @@
-from typing import List
-import math
-from typing import Optional
-import queue
-
 # https://www.youtube.com/watch?v=gf0zsh1FIgE
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
@@ -27,8 +22,3 @@ class Solution:
                 if grid[r][c]==1 and (r,c) not in visited and (r==0 or r==rows-1 or c==0 or c==cols-1):
                     borderLand += dfs(r,c)
         return land-borderLand
-
-
-
-obj = Solution()
-print(obj.numEnclaves([[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]))
