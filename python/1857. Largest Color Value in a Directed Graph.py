@@ -1,7 +1,4 @@
 from typing import List
-import math
-from typing import Optional
-import queue
 from collections import defaultdict
 
 # https://youtu.be/xLoDjKczUSk
@@ -12,7 +9,7 @@ class Solution:
             adj[src].append(dst)
 
         def dfs(node):
-            if node in currentPath: # cycle f
+            if node in currentPath: # cycle found
                 return float("inf")
             if node in visited:
                 return 0
