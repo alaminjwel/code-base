@@ -1,9 +1,3 @@
-from typing import List
-import math
-from typing import Optional
-import queue
-from collections import defaultdict
-
 class Solution:
     def simplifyPath(self, path: str) -> str:
         split = path.split('/')
@@ -18,7 +12,3 @@ class Solution:
         
         can = "/".join(stk)
         return "/"+can
-            
-
-obj = Solution()
-print(obj.simplifyPath("/../abc//./def/"))
