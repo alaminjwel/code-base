@@ -1,27 +1,3 @@
-from typing import List
-from typing import Optional
-import queue
-
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-#     def display(self, space='\t', level=0):
-#         if self is None:
-#             print(space*level + ' ')
-#             return
-
-#         if self.left is None and self.right is None:
-#             print(space*level + str(self.val))
-#             return
-
-#         TreeNode.display(self.right, space, level+1)
-#         print(space*level + str(self.val))
-#         TreeNode.display(self.left,space, level+1)
-
-
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -96,6 +72,11 @@ node11.next = node12
 node12.next = node13
 node13.next = None
 
+
+m = 9
+n = 6
+values = [995,348,36,516,333,627,248,422,13,225,764,311,405,695,698,83,145,783,478]
+
 m = 3
 n = 5
 values = [3,0,2,6,8,1,7,9,4,2,5,5,0]
@@ -109,4 +90,3 @@ for val in values[1:]:
 
 obj = Solution()
 print(obj.spiralMatrix(m,n,head))
-# print(node1.display())
