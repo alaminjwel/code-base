@@ -3,26 +3,6 @@ from typing import Optional
 import queue
 import math
 
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-#     def display(self, space='\t', level=0):
-#         if self is None:
-#             print(space*level + ' ')
-#             return
-
-#         if self.left is None and self.right is None:
-#             print(space*level + str(self.val))
-#             return
-
-#         TreeNode.display(self.right, space, level+1)
-#         print(space*level + str(self.val))
-#         TreeNode.display(self.left,space, level+1)
-
-
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -31,6 +11,7 @@ class ListNode:
 
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
+        # First we find the list length
         head2=head
         length=0
         while head2:
@@ -39,12 +20,13 @@ class Solution:
 
         i=0
         maximum=0
-        firstSlice=[]
+        firstSlice=[] # Will contain values of first half of the list
         while head:
-            if i<length/2:
+            if i<length/2: # This is first half
                 firstSlice.append(head.val)
-            else:
-                firstSliceItem = firstSlice.pop()
+            else: # This is last half
+                # firstSliceItem looks like [5,4],so we pick our value by popping
+                firstSliceItem = firstSlice.pop() 
                 maximum=max(maximum,(firstSliceItem+head.val))
             head=head.next
             i+=1
@@ -62,9 +44,3 @@ for val in values[1:]:
 obj = Solution()
 res = obj.pairSum(head)
 print(res)
-
-# while res:
-#     print(res.val)
-#     res=res.next
-
-# print(node.display())
