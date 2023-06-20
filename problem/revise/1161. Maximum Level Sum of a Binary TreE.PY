@@ -1,8 +1,6 @@
 from typing import List
 from typing import Optional
-import queue
 from collections import deque
-import math
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -62,29 +60,3 @@ node2.right=node5
 obj = Solution()
 res = obj.maxLevelSum(node1)
 print(res)
-
-
-
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-
-# values = [5,4,2,1]
-# # convert list to linked list
-# head = ListNode(values[0])
-# node = head
-# for val in values[1:]:
-#     node.next = ListNode(val)
-#     node = node.next
-
-# obj = Solution()
-# res = obj.pairSum(head)
-# print(res)
-
-# while res:
-#     print(res.val)
-#     res=res.next
-
-# print(node.display())
