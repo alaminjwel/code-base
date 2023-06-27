@@ -7,6 +7,7 @@ class Solution:
         adj = defaultdict(list)
         for src,dst in edges:
             adj[src].append(dst)
+        print(adj)
 
         def dfs(node):
             if node in currentPath: # cycle found
