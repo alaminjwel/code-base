@@ -1,0 +1,18 @@
+Great question! MongoDB provides several arithmetic and logical operators that can be used in aggregation pipelines, queries, and updates:
+
+Arithmetic Operators:
+
+$add: Adds two or more values together.
+$subtract: Subtracts a value from another value.
+$multiply: Multiplies two or more values together.
+$divide: Divides a value by another value.
+$mod: Calculates the remainder of a division operation.
+Logical Operators:
+
+$and: Joins query clauses with a logical AND operator to return all documents that match all conditions.
+$or: Joins query clauses with a logical OR operator to return all documents that match at least one condition.
+$not: Negates the result of a query expression.
+$nor: Joins query clauses with a logical NOR operator to return all documents that do not match any condition.
+There are also other comparison operators such as $eq, $ne, $lt, $lte, $gt, and $gte that can be used for filtering documents based on field values.
+
+I hope that helps! Let me know if you have any further questions.

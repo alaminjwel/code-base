@@ -1,0 +1,220 @@
+-- MongoDB Basic Find
+-- Your collection: Collection_AWITU
+
+-- MongoDB version: 4.4.8
+
+-- Your query should return only the fields FirstName, LastName, and Age from your collection for all users 
+-- who are above the age of 25 ordered by Age in ascending order. Your query will be excuted via the runCommand function.
+
+-- [
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053562"
+--     },
+--     "FirstName": "Daniel",
+--     "LastName": "Smith",
+--     "Age": 25
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053563"
+--     },
+--     "FirstName": "Mike",
+--     "LastName": "Smith",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053564"
+--     },
+--     "FirstName": "Jenny",
+--     "LastName": "Richards",
+--     "Age": 28
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053565"
+--     },
+--     "FirstName": "Robert",
+--     "LastName": "Black",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053566"
+--     },
+--     "FirstName": "Noah",
+--     "LastName": "Fritz",
+--     "Age": 30
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053567"
+--     },
+--     "FirstName": "Ashley",
+--     "LastName": "Johnson",
+--     "Age": 25
+--   }
+-- ]
+
+-- [
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053562"
+--     },
+--     "FirstName": "Daniel",
+--     "LastName": "Smith",
+--     "Age": 25
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053563"
+--     },
+--     "FirstName": "Mike",
+--     "LastName": "Smith",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053564"
+--     },
+--     "FirstName": "Jenny",
+--     "LastName": "Richards",
+--     "Age": 28
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053565"
+--     },
+--     "FirstName": "Robert",
+--     "LastName": "Black",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053566"
+--     },
+--     "FirstName": "Noah",
+--     "LastName": "Fritz",
+--     "Age": 30
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053567"
+--     },
+--     "FirstName": "Ashley",
+--     "LastName": "Johnson",
+--     "Age": 25
+--   }
+-- ]
+
+-- [
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053562"
+--     },
+--     "FirstName": "Daniel",
+--     "LastName": "Smith",
+--     "Age": 25
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053563"
+--     },
+--     "FirstName": "Mike",
+--     "LastName": "Smith",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053564"
+--     },
+--     "FirstName": "Jenny",
+--     "LastName": "Richards",
+--     "Age": 28
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053565"
+--     },
+--     "FirstName": "Robert",
+--     "LastName": "Black",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053566"
+--     },
+--     "FirstName": "Noah",
+--     "LastName": "Fritz",
+--     "Age": 30
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053567"
+--     },
+--     "FirstName": "Ashley",
+--     "LastName": "Johnson",
+--     "Age": 25
+--   }
+-- ]
+
+-- [
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053562"
+--     },
+--     "FirstName": "Daniel",
+--     "LastName": "Smith",
+--     "Age": 25
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053563"
+--     },
+--     "FirstName": "Mike",
+--     "LastName": "Smith",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053564"
+--     },
+--     "FirstName": "Jenny",
+--     "LastName": "Richards",
+--     "Age": 28
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053565"
+--     },
+--     "FirstName": "Robert",
+--     "LastName": "Black",
+--     "Age": 22
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053566"
+--     },
+--     "FirstName": "Noah",
+--     "LastName": "Fritz",
+--     "Age": 30
+--   },
+--   {
+--     "_id": {
+--       "$oid": "64ad566459dd19b835053567"
+--     },
+--     "FirstName": "Ashley",
+--     "LastName": "Johnson",
+--     "Age": 25
+--   }
+-- ]
+
+
+
+{
+  "find": "Collection_AWITU",
+  "filter": { "Age": { "$gt": 25 } },
+  "projection": { "FirstName": 1, "LastName": 1, "Age": 1, "_id": 0 },
+  "sort": { "Age": 1 }
+}
