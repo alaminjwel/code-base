@@ -24,43 +24,39 @@ class TreeNode:
         TreeNode.display(self.left,space, level+1)
 
 class Solution:
-    def maxLevelSum(self, root: Optional[TreeNode]) -> int:
-        q=deque([root])
-        maxLevel=1
-        level=1
-        maxSum=float('-inf')
-        while q:
-            s=0
-            for _ in range(len(q)):
-                node=q.popleft()
-                s+=node.val
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-
-            if s>maxSum:
-                maxSum=s
-                maxLevel=level
-            level+=1
-        return maxLevel
-
+    def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
+        def helper(l, r):
+            if l > r:
+                return [None]
+            result = []
+            for val in range(l, r + 1):
+                left_trees = helper(l, val - 1)
+                right_trees = helper(val + 1, r)
+                for left in left_trees:
+                    for right in right_trees:
+                        root = TreeNode(val)
+                        root.left = left
+                        root.right = right
+                        result.append(root)
+            return result
+        
+        return helper(1, n)
         
 
 
-node1 = TreeNode(1)
-node2 = TreeNode(7)
-node3 = TreeNode(0)
-node4 = TreeNode(7)
-node5 = TreeNode(-8)
-node1.left=node2
-node1.right=node3
-node2.left=node4
-node2.right=node5
+# node1 = TreeNode(1)
+# node2 = TreeNode(7)
+# node3 = TreeNode(0)
+# node4 = TreeNode(7)
+# node5 = TreeNode(-8)
+# node1.left=node2
+# node1.right=node3
+# node2.left=node4
+# node2.right=node5
 # node1.display()
 
 obj = Solution()
-res = obj.maxLevelSum(node1)
+res = obj.generateTrees(3)
 print(res)
 
 
